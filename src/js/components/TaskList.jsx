@@ -24,8 +24,8 @@ export default React.createClass({
     return (
       <form>
         <ListGroup>
-          {tasks.map(task =>
-            <Task task={task} key={task.title} />
+          {tasks.map( (task, idx)  =>
+            <Task task={task} key={idx} />
           )}
         </ListGroup>
       </form>
