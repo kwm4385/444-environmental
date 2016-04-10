@@ -11,8 +11,11 @@ export default {
     });
   },
 
-  clearList() {
-    console.warn('clearList action not yet implemented...');
+  clearList(text) {
+    Dispatcher.handleViewAction({
+      type: Constants.ActionTypes.TASK_REMOVED,
+      text: text
+    });
   },
 
   completeTask(task) {

@@ -6,7 +6,8 @@ export default {
 
   // Each time you add an action, add it here... They should be past-tense
   ActionTypes: keyMirror({
-    TASK_ADDED: null
+    TASK_ADDED: 'task_added',
+    TASK_REMOVED: 'task_removed'
   }),
 
   ActionSources: keyMirror({

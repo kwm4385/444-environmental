@@ -37,6 +37,10 @@ const TodoStore = assign({}, BaseStore, {
       break;
 
     // add more cases for other actionTypes...
+    case Constants.ActionTypes.TASK_REMOVED:
+      _data = [];
+      TodoStore.emitChange();
+      break;
 
     // no default
     }
