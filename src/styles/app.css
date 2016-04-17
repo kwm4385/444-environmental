@@ -1,0 +1,35 @@
+body{
+    background: #DDDDDD;
+}
+
+/* Small Navigation */
+.logo-small {
+    float: right; }
+
+.title-bar {
+    padding: 0 .5rem; }
+
+.menu-icon,
+.title-bar-title {
+    position: relative;
+    top: 10px; }
+
+
+/* Custom Styles */
+
+.app-menu-bar{
+    background: #85C13E;
+    border-bottom: 5px #6F9F34 solid;
+}
+
+.app-menu-item{
+    background: #85C13E;
+}
+
+.app-menu-bar a {
+    color: white;
+}
+
+.app-body {
+    border-bottom: 5px #BBBBBB solid;
+}
