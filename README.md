@@ -3,7 +3,7 @@
 
 > 444 Project
 
-## Running your project
+## Running project
 
 The project includes a live-reloading static server on port `8080` (you can change the port in the `gulpfile.js` config), which will build, launch, and rebuild the app whenever you change application code. To start the server, run:
 
