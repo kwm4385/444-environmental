@@ -45,6 +45,7 @@
     "gulp-eslint": "^2.0.0",
     "object-assign": "^4.0.1",
     "react": "^0.13.3",
-    "react-bootstrap": "^0.28.5"
+    "react-bootstrap": "^0.28.5",
+    "react-router": "^2.2.4"
   }
 }
