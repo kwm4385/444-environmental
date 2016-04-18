@@ -42,10 +42,13 @@
     "eslint-config-airbnb": "^6.2.0",
     "eslint-plugin-react": "^4.3.0",
     "flux": "^2.1.1",
+    "foundation": "^4.2.1-1",
     "gulp-eslint": "^2.0.0",
+    "jquery": "^2.2.3",
     "object-assign": "^4.0.1",
     "react": "^0.13.3",
     "react-bootstrap": "^0.28.5",
+    "react-foundation": "^0.6.8",
     "react-router": "^2.2.4"
   }
 }
