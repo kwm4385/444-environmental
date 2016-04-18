@@ -47,7 +47,6 @@
     "jquery": "^2.2.3",
     "object-assign": "^4.0.1",
     "react": "^0.13.3",
-    "react-bootstrap": "^0.28.5",
     "react-foundation": "^0.6.8",
     "react-router": "^2.2.4"
   }
