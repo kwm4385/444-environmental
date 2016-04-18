@@ -19,7 +19,6 @@ export default React.createClass({
             <li className="app-menu-item"><a href="#">Events</a></li>
           </ul>
         </div>
-
       </nav>
     );
   }

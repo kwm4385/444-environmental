@@ -1,35 +1,39 @@
-body{
+body {
     background: #DDDDDD;
+    margin: 0;
 }
 
 /* Small Navigation */
 .logo-small {
-    float: right; }
+  float: right;
+}
 
 .title-bar {
-    padding: 0 .5rem; }
+  padding: 0 .5rem;
+}
 
 .menu-icon,
 .title-bar-title {
-    position: relative;
-    top: 10px; }
+  position: relative;
+  top: 10px;
+}
 
 
 /* Custom Styles */
 
-.app-menu-bar{
-    background: #85C13E;
-    border-bottom: 5px #6F9F34 solid;
+.app-menu-bar {
+  background: #85C13E;
+  border-bottom: 5px #6F9F34 solid;
 }
 
-.app-menu-item{
-    background: #85C13E;
+.app-menu-item {
+  background: #85C13E;
 }
 
 .app-menu-bar a {
-    color: white;
+  color: white;
 }
 
 .app-body {
-    border-bottom: 5px #BBBBBB solid;
+  border-bottom: 5px #BBBBBB solid;
 }
