@@ -1,6 +1,7 @@
 body {
     background-color: #DDDDDD;
     margin: 0;
+    color: #656565;
 }
 
 /* Foundation Overrides */
@@ -21,8 +22,14 @@ body {
 
 /* Custom Styles */
 
+h1 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #616161;
+}
+
 .app-body {
-  border-bottom: 5px #BBBBBB solid;
+  border-bottom: 5px #DDDDDD solid;
 }
 
 .page-container {

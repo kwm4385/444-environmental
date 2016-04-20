@@ -13,7 +13,8 @@ export default React.createClass({
     return (
       <div>
         <Section>
-            <p>Hello world!</p>
+          <h1>Tip of the Day</h1>
+          <p>Carousel goes here</p>
         </Section>
       </div>
     );

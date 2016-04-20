@@ -28,7 +28,6 @@ export default React.createClass({
           <label>Events</label>
         </a>
       </div>
-
     );
   }
 });
