@@ -1,39 +1,33 @@
 body {
-    background: #DDDDDD;
+    background-color: #DDDDDD;
     margin: 0;
 }
 
-/* Small Navigation */
-.logo-small {
-  float: right;
+/* Foundation Overrides */
+
+.icon-bar {
+  background: #85C13E;
+  border-bottom: 5px #6F9F34 solid;
 }
 
-.title-bar {
-  padding: 0 .5rem;
+.icon-bar > * {
+    padding: 0.25em;
 }
 
-.menu-icon,
-.title-bar-title {
-  position: relative;
-  top: 10px;
+.icon-bar > .item:hover {
+    background: #6F9F34;
 }
 
 
 /* Custom Styles */
 
-.app-menu-bar {
-  background: #85C13E;
-  border-bottom: 5px #6F9F34 solid;
-}
-
-.app-menu-item {
-  background: #85C13E;
-}
-
-.app-menu-bar a {
-  color: white;
-}
-
 .app-body {
   border-bottom: 5px #BBBBBB solid;
+}
+
+.page-container {
+  background-color: #DDDDDD;
+  padding: 10px 0px;
+  height: calc(100vh - 66px);
+  width: 100vw;
 }

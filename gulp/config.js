@@ -21,6 +21,14 @@ module.exports = {
       imagePath: '/images' // Used by the image-url helper
     }
   },
+  vendorSass: {
+    src: src + '/vendorStyles/**/*.{sass,scss,css}',
+    dest: dest + '/styles',
+    settings: {
+      indentedSyntax: false, // Enable .sass syntax?
+      imagePath: '/images' // Used by the image-url helper
+    }
+  },
   browserify: {
     settings: {
       transform: ['babelify', 'reactify']

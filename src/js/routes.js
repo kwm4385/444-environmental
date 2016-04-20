@@ -1,9 +1,9 @@
 import React from 'react';
 import { Route, IndexRoute } from 'react-router';
-import Navigation from './components/Navigation.jsx';
+import Home from './components/Home.jsx';
 
 const routes = (
-  <Route name='app' path='/' component={ Navigation }>
+  <Route name='app' path='/' component={ Home }>
 
   </Route>
 );
