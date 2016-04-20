@@ -23,7 +23,6 @@ body {
     background: #6F9F34;
 }
 
-
 /* Custom Styles */
 
 h1 {
@@ -39,6 +38,6 @@ h1 {
 .page-container {
   background-color: #DDDDDD;
   padding: 10px 0px;
-  height: calc(100vh - 66px);
+  height: calc(100vh - 76px);
   width: 100vw;
 }
