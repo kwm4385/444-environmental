@@ -15,7 +15,7 @@ export default React.createClass({
           <img src="placeholder" />
           <label>Home</label>
         </a>
-        <a className="item">
+        <a className="item active">
           <img src="placeholder" />
           <label>Tips</label>
         </a>

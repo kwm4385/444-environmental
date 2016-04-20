@@ -16,6 +16,10 @@ body {
 }
 
 .icon-bar > .item:hover {
+    background: #85C13E;
+}
+
+.icon-bar > .item.active {
     background: #6F9F34;
 }
 
