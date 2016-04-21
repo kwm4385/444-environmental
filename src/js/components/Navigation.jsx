@@ -12,7 +12,9 @@ export default React.createClass({
   render() {
     let active = {
       home: "item" + ( this.props.active == "home" ? " active" : "" ),
-      tips: "item" + ( this.props.active == "tips" ? " active" : "" )
+      tips: "item" + ( this.props.active == "tips" ? " active" : "" ),
+      leaderboard: "item" + ( this.props.active == "tips" ? " active" : "" ),
+      events: "item" + ( this.props.active == "tips" ? " active" : "" ),
     }
     return (
       <div className="icon-bar four-up">
@@ -24,11 +26,11 @@ export default React.createClass({
           <img src="placeholder" />
           <label>Tips</label>
         </Link>
-        <Link to='/leaderboards' className={active['tips']}>
+        <Link to='/leaderboards' className={active['leaderboard']}>
           <img src="placeholder" />
           <label>Leaderboards</label>
         </Link>
-        <Link to='/events' className={active['tips']}>
+        <Link to='/events' className={active['events']}>
           <img src="placeholder" />
           <label>Events</label>
         </Link>
