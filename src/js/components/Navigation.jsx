@@ -1,4 +1,5 @@
 import React  from 'react'
+import { Link } from 'react-router';
 
 export default React.createClass({
   getInitialState() {
@@ -9,24 +10,28 @@ export default React.createClass({
   },
 
   render() {
+    let active = {
+      home: "item" + ( this.props.active == "home" ? " active" : "" ),
+      tips: "item" + ( this.props.active == "tips" ? " active" : "" )
+    }
     return (
       <div className="icon-bar four-up">
-        <a className="item">
+        <Link to='/' className={active['home']}>
           <img src="placeholder" />
           <label>Home</label>
-        </a>
-        <a className="item">
+        </Link>
+        <Link to='/tips' className={active['tips']}>
           <img src="placeholder" />
           <label>Tips</label>
-        </a>
-        <a className="item">
+        </Link>
+        <Link to='/leaderboards' className={active['tips']}>
           <img src="placeholder" />
           <label>Leaderboards</label>
-        </a>
-        <a className="item">
+        </Link>
+        <Link to='/events' className={active['tips']}>
           <img src="placeholder" />
           <label>Events</label>
-        </a>
+        </Link>
       </div>
     );
   }

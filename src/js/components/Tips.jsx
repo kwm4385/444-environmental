@@ -13,11 +13,8 @@ export default React.createClass({
   render() {
     return (
       <div>
-        <Navigation active="home" /> 
-        <Section>
-          <h1>Tip of the Day</h1>
-          <p>Carousel goes here</p>
-        </Section>
+        <Navigation active="tips" /> 
+        Tips
       </div>
     );
   }
