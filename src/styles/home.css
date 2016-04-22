@@ -1,0 +1,21 @@
+.pic-col {
+  background-color: #EEEEEE;
+  padding: 5px;
+}
+
+.button-col {
+  padding: 0;
+}
+
+.profile-pic {
+  border-radius: 50%;
+  border: 2px solid #7A7A7A;
+}
+
+.info {
+  font-size: 10px;
+}
+
+.mod-button {
+  margin: 0;
+}

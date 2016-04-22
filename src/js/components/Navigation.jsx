@@ -13,10 +13,10 @@ export default React.createClass({
   render() {
     // Not the right way to do this, but it works?
     let active = {
-      home: "item" + ( this.props.active == "home" ? " active" : "" ),
-      tips: "item" + ( this.props.active == "tips" ? " active" : "" ),
-      leaderboard: "item" + ( this.props.active == "tips" ? " active" : "" ),
-      events: "item" + ( this.props.active == "tips" ? " active" : "" ),
+      home: "item" + ( this.props.location.pathname == "/" ? " active" : "" ),
+      tips: "item" + ( this.props.location.pathname == "/tips" ? " active" : "" ),
+      leaderboard: "item" + ( this.props.location.pathname == "/leaderboards" ? " active" : "" ),
+      events: "item" + ( this.props.location.pathname == "/events" ? " active" : "" ),
     };
     return (
       <div>
