@@ -41,3 +41,11 @@ h1 {
   height: calc(100vh - 76px);
   width: 100vw;
 }
+
+.e-nav {
+  text-align:center;
+}
+
+table {
+  width:100%;
+}
