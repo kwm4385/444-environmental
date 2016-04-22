@@ -4,10 +4,12 @@ import Navigation from './Navigation.jsx'
 
 export default React.createClass({
   getInitialState() {
+    console.log("what");
     return {};
   },
 
   componentDidMount() {
+    console.log("didMount");
   },
 
   render() {

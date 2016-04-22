@@ -10,12 +10,13 @@ export default React.createClass({
   },
 
   render() {
+    // Not the right way to do this, but it works?
     let active = {
       home: "item" + ( this.props.active == "home" ? " active" : "" ),
       tips: "item" + ( this.props.active == "tips" ? " active" : "" ),
       leaderboard: "item" + ( this.props.active == "tips" ? " active" : "" ),
       events: "item" + ( this.props.active == "tips" ? " active" : "" ),
-    }
+    };
     return (
       <div className="icon-bar four-up">
         <Link to='/' className={active['home']}>
