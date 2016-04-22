@@ -1,0 +1,7 @@
+Primary Color (lime green): #85C13E
+Selected/shadow Color (dark green): #6F9F33
+Secondary Color (light orange): #E8AE00
+Secondary Highlight (Dark orange): #C69500
+Element Background(White): #FFFFFF
+Element Shadow(dark grey): #BBBBBB
+Background(light grey):#DDDDDD
