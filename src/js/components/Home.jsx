@@ -62,6 +62,11 @@ export default React.createClass({
                 <Button size={Sizes.SMALL} color={Colors.SECONDARY}>Details</Button>
               </Column>
             </Row>
+            <Row>
+              <Column small={3} offsetOnSmall={9} className="button-col">
+                <Button size={Sizes.SMALL}>All Events</Button>
+              </Column>
+            </Row>
           </div>
         </Section>
 
