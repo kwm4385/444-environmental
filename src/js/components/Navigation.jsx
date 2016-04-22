@@ -1,5 +1,6 @@
 import React  from 'react'
 import { Link } from 'react-router'
+import Leaderboard  from './Leaderboard.jsx'
 
 export default React.createClass({
   getInitialState() {
@@ -21,19 +22,19 @@ export default React.createClass({
       <div>
         <div className="icon-bar four-up">
           <Link to='/' className={active['home']}>
-            <img src="placeholder" />
+            <img src="/images/Dashboard32x32.png" />
             <label>Home</label>
           </Link>
           <Link to='/tips' className={active['tips']}>
-            <img src="placeholder" />
+            <img src="/images/Tips32x32.png" />
             <label>Tips</label>
           </Link>
           <Link to='/leaderboards' className={active['leaderboard']}>
-            <img src="placeholder" />
+            <img src="/images/Leaderboard32x32.png" />
             <label>Leaderboards</label>
           </Link>
           <Link to='/events' className={active['events']}>
-            <img src="placeholder" />
+            <img src="/images/Events32x32.png" />
             <label>Events</label>
           </Link>
         </div>

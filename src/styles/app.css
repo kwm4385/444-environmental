@@ -39,6 +39,8 @@ h1 {
   background-color: #DDDDDD;
   padding: 10px 0px;
   height: calc(100vh - 76px);
+  overflow-y: scroll;
+  overflow-x: hidden;
   width: 100vw;
 }
 
