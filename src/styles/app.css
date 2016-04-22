@@ -1,3 +1,7 @@
+html {
+  font-size: 14px;
+}
+
 body {
     background-color: #DDDDDD;
     margin: 0;
@@ -25,13 +29,20 @@ body {
 
 .button, .button:hover {
   background-color: #85C13E;
+  margin: 0;
+}
+
+.button.secondary, .button.secondary:hover {
+  background-color: #E8AE00;
+  color: #fff;
+  margin: 0;
 }
 
 /* Custom Styles */
 
 h1 {
   font-size: 18px;
-  font-weight: 700;
+  font-weight: 600;
   color: #616161;
 }
 
@@ -69,6 +80,22 @@ h1 {
   font-size: 130px;
   margin: 0;
   line-height: 100px;
+}
+
+.button-col {
+  padding: 0;
+}
+
+.button-col button {
+  width: 100%;
+}
+
+.highlight {
+  background-color: #DDDDDD;
+}
+
+.roomy {
+  margin-bottom: 5px;
 }
 
 table {

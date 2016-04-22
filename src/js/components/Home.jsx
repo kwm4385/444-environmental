@@ -1,5 +1,5 @@
 import React  from 'react'
-import { Row, Column, Button, Colors } from 'react-foundation'
+import { Row, Column, Button, Colors, Sizes } from 'react-foundation'
 import Navigation  from './Navigation.jsx'
 import Section  from './Section.jsx'
 
@@ -14,7 +14,7 @@ export default React.createClass({
   render() {
     return (
       <div>
-        <Section>
+        <Section noPadding>
           <Row>
             <Column small={3} className="pic-col">
               <img className="profile-pic" src="/images/profile.jpg" />
@@ -31,10 +31,40 @@ export default React.createClass({
             </Column>
           </Row>
         </Section>
+
         <Section>
           <h1>Tip of the Day</h1>
           <p>Carousel goes here</p>
         </Section>
+
+        <Section>
+          <h1>Your Next Events</h1>
+          <div className="section-inner">
+            <Row className="highlight roomy">
+              <Column small={6}>
+                <span className="vert-text">Electronics Recycling Drive</span>
+              </Column>
+              <Column small={3}>
+                <span className="vert-text">4/25/2016</span>
+              </Column>
+              <Column small={3} className="button-col">
+                <Button size={Sizes.SMALL} color={Colors.SECONDARY}>Details</Button>
+              </Column>
+            </Row>
+            <Row className="highlight roomy">
+              <Column small={6}>
+                <span className="vert-text">Eco Networking</span>
+              </Column>
+              <Column small={3}>
+                <span className="vert-text">4/26/2016</span>
+              </Column>
+              <Column small={3} className="button-col">
+                <Button size={Sizes.SMALL} color={Colors.SECONDARY}>Details</Button>
+              </Column>
+            </Row>
+          </div>
+        </Section>
+
         <Section>
           <Row>
             <Column small={6} className="block-col">

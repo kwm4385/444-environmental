@@ -3,3 +3,7 @@
     border-bottom: 5px #BBBBBB solid;
     margin-bottom: 10px;
 }
+
+.section-inner {
+  padding: 5px 0px;
+}
