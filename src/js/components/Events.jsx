@@ -1,7 +1,7 @@
 import React  from 'react'
-import Section  from './Section.jsx'
 import { Link } from 'react-router'
-import Navigation from './Navigation.jsx'
+import Navigation  from './Navigation.jsx'
+import Section  from './Section.jsx'
 
 export default React.createClass({
   getInitialState() {
@@ -14,7 +14,7 @@ export default React.createClass({
   },
 
   eventsFor(list) {
-    
+
     let events = Array(16)
       .join(".") // Because Array(16) is [undefined x 16] and join works on that
       .split(".")// but map cant because ^ that is not the same as [undefined, ...]
@@ -29,7 +29,6 @@ export default React.createClass({
   render() {
     return (
       <div>
-        <Navigation active="events" /> 
         <div>
           <div className="row">
             <div className="small-4 large-4 columns e-nav">

@@ -1,6 +1,6 @@
 import React  from 'react'
+import Navigation  from './Navigation.jsx'
 import Section  from './Section.jsx'
-import Navigation from './Navigation.jsx'
 
 export default React.createClass({
   getInitialState() {
@@ -12,8 +12,7 @@ export default React.createClass({
 
   render() {
     return (
-      <div>
-        <Navigation active="home" /> 
+      <div className="page-container">
         <Section>
           <h1>Tip of the Day</h1>
           <p>Carousel goes here</p>

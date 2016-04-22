@@ -13,7 +13,6 @@ export default React.createClass({
   render() {
     return (
       <div>
-        <Navigation active="tips" /> 
         Tips
       </div>
     );
