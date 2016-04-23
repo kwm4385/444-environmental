@@ -43,18 +43,18 @@ export default React.createClass({
   render() {
     return (
       <div style={{height:'100%'}}>
-        <div className="row" style={{height:'25px'}}>
-          <div className="small-4 large-4 columns e-nav">
-            <Link to='/events/popular' className="item"> Popular </Link>
+        <div className="row" style={{height:'40px'}}>
+          <div className="small-4 large-4 columns e-nav active">
+            <span>All</span>
           </div>
           <div className="small-4 large-4 columns e-nav">
-            <Link to='/events/MyList' className="item"> My List </Link>
+            <span>Popular</span>
           </div>
           <div className="small-4 large-4 columns e-nav">
-            <Link to='/events/all' className="item"> All </Link>
+            <span>Submitted</span>
           </div>
         </div>
-        <div style={{height:'calc(100% - 45px)'}}>
+        <div style={{height:'calc(100% - 60px)'}}>
           {this.eventsFor()}
         </div>
       </div>

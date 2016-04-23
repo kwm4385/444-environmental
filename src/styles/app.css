@@ -60,6 +60,20 @@ h1 {
 
 .e-nav {
   text-align: center;
+  height: 100%;
+  border: 1px solid #DDDDDD;
+  font-size: 1.25em;
+  color: #616161;
+  padding-bottom: 15px;
+  cursor: pointer;
+}
+
+.e-nav:not(:last-child) {
+  border-right: 1px solid white;
+}
+
+.e-nav.active {
+  border-bottom: 3px solid #E8AE00;
 }
 
 .block-col {

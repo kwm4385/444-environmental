@@ -2,11 +2,11 @@ import moment  from 'moment'
 import assign  from 'object-assign'
 import React  from 'react'
 import { Row, Column, Button, Sizes, Colors } from 'react-foundation'
+import { Link } from 'react-router'
 import Constants  from '../Constants'
 import Dispatcher  from '../Dispatcher'
 import EventStore  from '../stores/EventStore.js'
 import Section  from './Section.jsx'
-import { Link } from 'react-router'
 
 export default React.createClass({
 
