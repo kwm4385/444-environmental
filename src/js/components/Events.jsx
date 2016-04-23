@@ -37,7 +37,7 @@ export default React.createClass({
   },
 
   eventsFor(list) {
-    return <List items={this.state.events} itemRenderer={this._renderListItem}></List>;
+    return <List items={this.state.events} itemRenderer={this._renderListItem} linkPrefix='/events'></List>;
   },
 
   render() {
