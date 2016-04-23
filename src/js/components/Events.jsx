@@ -26,10 +26,10 @@ export default React.createClass({
   _renderListItem(e) {
     return (
       <Row>
-        <Column small={8}>
+        <Column small={9}>
           {e.title}
         </Column>
-        <Column small={4}>
+        <Column small={3}>
           {e.points} Pts
         </Column>
       </Row>
@@ -42,21 +42,21 @@ export default React.createClass({
 
   render() {
     return (
-      <div>
-        <div>
-          <div className="row">
-            <div className="small-4 large-4 columns e-nav">
-              <Link to='/events/popular' className="item"> Popular </Link>
-            </div>
-            <div className="small-4 large-4 columns e-nav">
-              <Link to='/events/MyList' className="item"> My List </Link>
-            </div>
-            <div className="small-4 large-4 columns e-nav">
-              <Link to='/events/all' className="item"> All </Link>
-            </div>
+      <div style={{height:'100%'}}>
+        <div className="row" style={{height:'25px'}}>
+          <div className="small-4 large-4 columns e-nav">
+            <Link to='/events/popular' className="item"> Popular </Link>
+          </div>
+          <div className="small-4 large-4 columns e-nav">
+            <Link to='/events/MyList' className="item"> My List </Link>
+          </div>
+          <div className="small-4 large-4 columns e-nav">
+            <Link to='/events/all' className="item"> All </Link>
           </div>
         </div>
-        {this.eventsFor()}
+        <div style={{height:'calc(100% - 45px)'}}>
+          {this.eventsFor()}
+        </div>
       </div>
     );
   }
