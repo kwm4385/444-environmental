@@ -96,7 +96,11 @@ h1 {
 }
 
 .roomy {
-  margin-bottom: 5px;
+  margin: 5px 0px;
+}
+
+.padded {
+  padding: 10px;
 }
 
 .list {
@@ -112,4 +116,8 @@ h1 {
 .list li {
   padding: 10px;
   border: 1px solid #DDDDDD;
+}
+
+.event-details {
+  text-align: center;
 }

@@ -12,9 +12,8 @@ const routes = (
     <Route path="/" component={ Home } />
      <Route name='tips' path='tips' component={ Tips } />
      <Route name='leaderboards' path='leaderboards' component={ Leaderboard } />
-     <Route name='events' path='events' component={ Events }>
-       <Route name='event' path=':eventId' component={ Event } />
-     </Route>
+     <Route name='events' path='events' component={ Events }/>
+     <Route name='event' path='events/:eventId' component={ Event } />
   </Route>
 );
 

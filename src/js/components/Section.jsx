@@ -10,7 +10,7 @@ export default React.createClass({
 
   render() {
     return (
-      <div className="section">
+      <div className={"section " + this.props.className}>
           {this.props.children}
       </div>
     );

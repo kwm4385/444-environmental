@@ -7,10 +7,8 @@ import BaseStore  from './BaseStore'
 function makeid() {
     var text = "";
     var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-
     for( var i=0; i < 5; i++ )
         text += possible.charAt(Math.floor(Math.random() * possible.length));
-
     return text;
 }
 
@@ -45,6 +43,12 @@ const EventStore = assign({}, BaseStore, {
   // public methods used by Controller-View to operate on data
   getAll() {
     return {events: events};
+  },
+
+  getEvent(id) {
+    return _.find(events, function(e) {
+      return e.id == id;
+    });
   },
 
   // register store with dispatcher, allowing actions to flow through
