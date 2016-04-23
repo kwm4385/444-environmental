@@ -1,29 +1,43 @@
 import React  from 'react'
+import { Row, Column } from 'react-foundation'
 import { Link } from 'react-router'
-import Navigation  from './Navigation.jsx'
+import _  from 'underscore'
+import EventStore  from '../stores/EventStore.js'
+import List  from './List.jsx'
 import Section  from './Section.jsx'
 
 export default React.createClass({
+  _onChange() {
+    this.setState(EventStore.getAll());
+  },
+
   getInitialState() {
-    return {
-      selected: 0
-    };
+    return EventStore.getAll();
   },
 
   componentDidMount() {
+    EventStore.addChangeListener(this._onChange);
+  },
+
+  componentWillUnmount() {
+    EventStore.removeChangeListener(this._onChange);
+  },
+
+  _renderListItem(e) {
+    return (
+      <Row>
+        <Column small={8}>
+          {e.title}
+        </Column>
+        <Column small={4}>
+          {e.points} Pts
+        </Column>
+      </Row>
+    );
   },
 
   eventsFor(list) {
-
-    let events = Array(16)
-      .join(".") // Because Array(16) is [undefined x 16] and join works on that
-      .split(".")// but map cant because ^ that is not the same as [undefined, ...]
-      .map( (n, i) => {
-      return (<tr key={i}>
-        <td>Recyle Drive</td>
-      </tr>)
-    });
-    return events;
+    return <List items={this.state.events} itemRenderer={this._renderListItem}></List>;
   },
 
   render() {
@@ -42,14 +56,7 @@ export default React.createClass({
             </div>
           </div>
         </div>
-        <Section>
-          <h1>Events</h1>
-          <table>
-            <tbody>
-              {this.eventsFor(this.state.selected)}
-            </tbody>
-          </table>
-        </Section>
+        {this.eventsFor()}
       </div>
     );
   }

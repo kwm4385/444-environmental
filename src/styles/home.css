@@ -19,4 +19,6 @@
 .vert-text {
   position: relative;
   top: 8px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }

@@ -52,7 +52,7 @@ h1 {
 
 .page-container {
   background-color: #DDDDDD;
-  height: calc(100vh - 76px);
+  height: calc(100vh - 67px);
   overflow-y: scroll;
   overflow-x: hidden;
   width: 100vw;
@@ -99,6 +99,16 @@ h1 {
   margin-bottom: 5px;
 }
 
-table {
-  width:100%;
+.list {
+  list-style: none;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  border: 1px solid #DDDDDD;
+  background: white;
+  margin: 10px;
+}
+
+.list li {
+  padding: 5px;
 }
