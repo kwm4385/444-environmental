@@ -8,16 +8,31 @@ import Dispatcher  from '../Dispatcher'
 import TipsStore  from '../stores/TipsStore.js'
 import List  from './List.jsx'
 import Section  from './Section.jsx'
+import TipsActionCreators from '../actions/TipsActionCreators'
+import { browserHistory } from 'react-router'
 
 export default React.createClass({
 
   _onChange() {
-    this.setState(TipsStore.getEvent(this.props.params.tipId));
+    this.setState(TipsStore.getTip(this.props.params.tipId));
+  },
+
+  _isComplete() {
+    return this.state.tip.steps.reduce((s, t) => t.done && s, true);
+  },
+
+  _onCheck(e) {
+    TipsActionCreators.checkTip(this.props.params.tipId, e, true);
+    this._onChange();
+  },
+
+  _done() {
+    browserHistory.push('/');
   },
 
   getInitialState() {
     return {
-      tip: TipsStore.getTip(this.props.params.tipId)
+      tip: TipsStore.getTip(this.props.params.tipId),
     };
   },
 
@@ -31,7 +46,7 @@ export default React.createClass({
 
   _renderCheckListItem(item) {
     return (
-      <div>{item.objective}</div>
+      <div><input type="checkbox" checked={item.done} onChange={() => this._onCheck(item.id)} /> {item.objective}</div>
     );
   },
 
@@ -46,7 +61,12 @@ export default React.createClass({
           </Column>
         </Row>
           <Section className="roomy padded">
-            <List items={e.steps} itemRenderer={this._renderCheckListItem} linkPrefix=''></List>;
+            <List items={e.steps} itemRenderer={this._renderCheckListItem} linkPrefix=''></List>
+            <Row>
+              <Column small={8}>
+                <Button disabled={!this._isComplete()} onClick={this._done} width="100%">Complete</Button>
+              </Column>
+            </Row>
           </Section>
       </div>
     );

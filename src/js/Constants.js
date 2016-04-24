@@ -6,7 +6,8 @@ export default {
 
   // Each time you add an action, add it here... They should be past-tense
   ActionTypes: keyMirror({
-    EVENT_ADDED: 'event_added'
+    EVENT_ADDED: 'event_added',
+    TIPS_CHECKED: 'tip_changed'
   }),
 
   ActionSources: keyMirror({

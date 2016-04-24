@@ -18,12 +18,12 @@ let tips = [{
   description: "Bring your dead phones, computers, batteries and more to be recycled!",
   date: moment().add(1, 'days'),
   points: 100,
-  id: makeid(),
+  id: "testt1",
   steps: [
-    { objective: "Recycling" },
-    { objective: "Recycling" },
-    { objective: "Recycling" },
-    { objective: "Recycling" },
+    { objective: "Recycling Thing A", done: true, id: makeid() },
+    { objective: "Recycling", done: false, id: makeid() },
+    { objective: "Recycling", done: false, id: makeid() },
+    { objective: "Recycling", done: false, id: makeid() },
   ]
 },
 {
@@ -33,10 +33,10 @@ let tips = [{
   points: 75,
   id: makeid(),
   steps: [
-    { objective: "Recycling" },
-    { objective: "Recycling" },
-    { objective: "Recycling" },
-    { objective: "Recycling" },
+    { objective: "Recycling", done: false, id: makeid() },
+    { objective: "Recycling", done: false, id: makeid() },
+    { objective: "Recycling", done: false, id: makeid() },
+    { objective: "Recycling", done: false, id: makeid() },
   ]
 
 },
@@ -47,10 +47,10 @@ let tips = [{
   points: 150,
   id: makeid(),
   steps: [
-    { objective: "Recycling" },
-    { objective: "Recycling" },
-    { objective: "Recycling" },
-    { objective: "Recycling" },
+    { objective: "Recycling", done: false, id: makeid() },
+    { objective: "Recycling", done: false, id: makeid() },
+    { objective: "Recycling", done: false, id: makeid() },
+    { objective: "Recycling", done: false, id: makeid() },
   ]
 
 }];
@@ -74,7 +74,14 @@ const TipsStore = assign({}, BaseStore, {
 
     switch (action.type) {
       // add more cases for other actionTypes...
-
+      case Constants.ActionTypes.TIPS_CHECKED:
+        console.log(payload);
+        let tipID = _.find(tips, { id: action.tid });
+        let tipIndex = tips.indexOf(tipID);
+        let step = _.find(tipID.steps, { id: action.sid });
+        let stepIndex = tipID.steps.indexOf(step);
+        tips[tipIndex].steps[stepIndex].done = action.done;
+        break;
       // no default
       }
     })
