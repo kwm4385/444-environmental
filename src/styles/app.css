@@ -27,12 +27,22 @@ body {
     background: #6F9F34;
 }
 
-.button, .button:hover {
+.button,
+.button:hover,
+.button:disabled,
+.button:active {
   background-color: #85C13E;
   margin: 0;
 }
 
-.button.secondary, .button.secondary:hover {
+/*.button:disabled {
+  background: #DDDDDD;
+}*/
+
+.button.secondary,
+.button.secondary:hover,
+.button.secondary:disabled,
+.button.secondary:active {
   background-color: #E8AE00;
   color: #fff;
   margin: 0;
@@ -40,7 +50,6 @@ body {
 
 label {
   color: #616161;
-  font-size: 16px;
   font-weight: 600;
 }
 
