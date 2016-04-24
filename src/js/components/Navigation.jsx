@@ -31,7 +31,7 @@ export default React.createClass({
           </Link>
           <Link to='/leaderboards' className={active['leaderboard']}>
             <img src="/images/Leaderboard32x32.png" />
-            <label>Leaderboards</label>
+            <label>Leaderboard</label>
           </Link>
           <Link to='/events' className={active['events']}>
             <img src="/images/Events32x32.png" />

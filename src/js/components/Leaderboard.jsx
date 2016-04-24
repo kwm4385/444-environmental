@@ -1,7 +1,6 @@
 import React  from 'react'
 import { Row, Column } from 'react-foundation'
 import { Link } from 'react-router'
-import _  from 'underscore'
 import UserStore  from '../stores/UserStore.js'
 import List  from './List.jsx'
 import Section  from './Section.jsx'

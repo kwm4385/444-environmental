@@ -50,6 +50,10 @@ module.exports = {
     src: 'src/images/**/*',
     dest: dest + '/images'
   },
+  fonts: {
+    src: 'src/fonts/**/*',
+    dest: dest + '/fonts'
+  },
   watch: {
     src: 'src/**/*.*',
     tasks: ['build']

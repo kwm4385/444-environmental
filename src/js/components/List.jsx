@@ -1,6 +1,5 @@
 import React  from 'react'
 import { Link } from 'react-router'
-import _  from 'underscore'
 
 export default React.createClass({
   getInitialState() {

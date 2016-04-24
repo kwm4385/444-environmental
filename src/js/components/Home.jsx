@@ -1,7 +1,6 @@
 import React  from 'react'
 import { Row, Column, Button, Colors, Sizes } from 'react-foundation'
 import { Link } from 'react-router'
-import _  from 'underscore'
 import EventStore  from '../stores/EventStore.js'
 import Navigation  from './Navigation.jsx'
 import Section  from './Section.jsx'
@@ -76,7 +75,7 @@ export default React.createClass({
             {this.renderEvents()}
             <Row>
               <Column small={3} offsetOnSmall={9} className="button-col">
-                <Button size={Sizes.SMALL}>All Events</Button>
+                <Link to='events/'><Button size={Sizes.SMALL}>All Events</Button></Link>
               </Column>
             </Row>
           </div>

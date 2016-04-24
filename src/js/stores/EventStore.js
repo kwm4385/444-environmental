@@ -1,6 +1,5 @@
 import moment  from 'moment'
 import assign  from 'object-assign'
-import _  from 'underscore'
 import Constants  from '../Constants'
 import Dispatcher  from '../Dispatcher'
 import BaseStore  from './BaseStore'
@@ -58,6 +57,11 @@ const EventStore = assign({}, BaseStore, {
 
     switch (action.type) {
       // add more cases for other actionTypes...
+      case Constants.ActionTypes.EVENT_ADDED:
+        const event = action.event;
+        event.id = makeid();
+        events.push(event);
+        break;
 
       // no default
       }

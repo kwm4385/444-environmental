@@ -6,8 +6,8 @@ import { Link } from 'react-router'
 import Constants  from '../Constants'
 import Dispatcher  from '../Dispatcher'
 import TipsStore  from '../stores/TipsStore.js'
-import Section  from './Section.jsx'
 import List  from './List.jsx'
+import Section  from './Section.jsx'
 
 export default React.createClass({
 
