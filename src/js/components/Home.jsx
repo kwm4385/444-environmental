@@ -1,14 +1,47 @@
 import React  from 'react'
 import { Row, Column, Button, Colors, Sizes } from 'react-foundation'
+import { Link } from 'react-router'
+import _  from 'underscore'
+import EventStore  from '../stores/EventStore.js'
 import Navigation  from './Navigation.jsx'
 import Section  from './Section.jsx'
 
 export default React.createClass({
+  _onChange() {
+    this.setState(EventStore.getAll());
+  },
+
   getInitialState() {
-    return {};
+    return EventStore.getAll();
   },
 
   componentDidMount() {
+    EventStore.addChangeListener(this._onChange);
+  },
+
+  componentWillUnmount() {
+    EventStore.removeChangeListener(this._onChange);
+  },
+
+  renderEvents() {
+    let events = _.first(_.sortBy(this.state.events, 'date'), 2);
+    return _.map(events, function(e, i) {
+      return (
+        <Row key={i} className="highlight roomy">
+          <Column small={6}>
+            <span className="vert-text">{e.title}</span>
+          </Column>
+          <Column small={3}>
+            <span className="vert-text">{e.date.fromNow()}</span>
+          </Column>
+          <Column small={3} className="button-col">
+            <Link to={'events/' + e.id}>
+              <Button size={Sizes.SMALL} color={Colors.SECONDARY}>Details</Button>
+            </Link>
+          </Column>
+        </Row>
+      );
+    });
   },
 
   render() {
@@ -40,28 +73,7 @@ export default React.createClass({
         <Section>
           <h1>Your Next Events</h1>
           <div className="section-inner">
-            <Row className="highlight roomy">
-              <Column small={6}>
-                <span className="vert-text">Electronics Recycling Drive</span>
-              </Column>
-              <Column small={3}>
-                <span className="vert-text">4/25/2016</span>
-              </Column>
-              <Column small={3} className="button-col">
-                <Button size={Sizes.SMALL} color={Colors.SECONDARY}>Details</Button>
-              </Column>
-            </Row>
-            <Row className="highlight roomy">
-              <Column small={6}>
-                <span className="vert-text">Eco Networking</span>
-              </Column>
-              <Column small={3}>
-                <span className="vert-text">4/26/2016</span>
-              </Column>
-              <Column small={3} className="button-col">
-                <Button size={Sizes.SMALL} color={Colors.SECONDARY}>Details</Button>
-              </Column>
-            </Row>
+            {this.renderEvents()}
             <Row>
               <Column small={3} offsetOnSmall={9} className="button-col">
                 <Button size={Sizes.SMALL}>All Events</Button>
@@ -73,10 +85,12 @@ export default React.createClass({
         <Section>
           <Row>
             <Column small={6} className="block-col">
-              <Button className="block-button">
-                <p className="button-symbol">+</p>
-                Add Tip/Event
-              </Button>
+              <Link to="/create">
+                <Button className="block-button">
+                  <p className="button-symbol">+</p>
+                  Add Tip/Event
+                </Button>
+              </Link>
             </Column>
             <Column small={6} className="block-col">
               <Button className="block-button">

@@ -4,14 +4,6 @@ import Constants  from '../Constants'
 import Dispatcher  from '../Dispatcher'
 import BaseStore  from './BaseStore'
 
-function makeid() {
-    var text = "";
-    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-    for( var i=0; i < 5; i++ )
-        text += possible.charAt(Math.floor(Math.random() * possible.length));
-    return text;
-}
-
 // hardcode some starting data
 let users = [{
   name: "John Doe",

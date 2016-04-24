@@ -3,6 +3,7 @@ import assign  from 'object-assign'
 import React  from 'react'
 import { Row, Column, Button, Sizes, Colors } from 'react-foundation'
 import { Link } from 'react-router'
+import _  from 'underscore'
 import Constants  from '../Constants'
 import Dispatcher  from '../Dispatcher'
 import EventStore  from '../stores/EventStore.js'
@@ -34,10 +35,7 @@ export default React.createClass({
     return (
       <div>
         <Row>
-          <Column small={2}>
-            <Link to="/events"><Button size={Sizes.SMALL} color={Colors.SECONDARY}>Back</Button></Link>
-          </Column>
-          <Column small={8}>
+          <Column style={{textAlign:'center'}} small={12}>
             <h1>{e.title}</h1>
           </Column>
         </Row>

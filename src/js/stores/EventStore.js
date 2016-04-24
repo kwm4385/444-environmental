@@ -1,15 +1,16 @@
 import moment  from 'moment'
 import assign  from 'object-assign'
+import _  from 'underscore'
 import Constants  from '../Constants'
 import Dispatcher  from '../Dispatcher'
 import BaseStore  from './BaseStore'
 
 function makeid() {
-    var text = "";
-    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-    for( var i=0; i < 5; i++ )
-        text += possible.charAt(Math.floor(Math.random() * possible.length));
-    return text;
+  var text = "";
+  var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+  for( var i=0; i < 5; i++ )
+      text += possible.charAt(Math.floor(Math.random() * possible.length));
+  return text;
 }
 
 // hardcode some starting data
@@ -19,7 +20,7 @@ let events = [{
   location: "SAU",
   date: moment().add(1, 'days'),
   points: 100,
-  id: makeid()
+  id: "gf3fs"
 },
 {
   title: "Eco Networking",
@@ -27,7 +28,7 @@ let events = [{
   location: "Webb Auditorium",
   date: moment().add(3, 'days'),
   points: 75,
-  id: makeid()
+  id: "3ghd3"
 },
 {
   title: "Earth Day Tree Planting",
@@ -35,7 +36,7 @@ let events = [{
   location: "Outside",
   date: moment().add(7, 'days'),
   points: 150,
-  id: makeid()
+  id: "oq4fv"
 }];
 
 // Facebook style store creation.
