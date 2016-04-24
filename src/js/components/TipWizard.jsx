@@ -9,9 +9,7 @@ export default React.createClass({
       step: 0,
       complete: false,
       title: "",
-      description: "",
-      location: "",
-      date: null
+      steps: []
     }
   },
 
@@ -49,6 +47,7 @@ export default React.createClass({
   componentWillMount() {
     this.steps = [
       this._stepOne,
+      this._stepTwo,
     ];
   },
 
@@ -64,6 +63,34 @@ export default React.createClass({
         {this._controls(this.state.title.length > 0)}
       </div>
     );
+  },
+
+  addingTips(name, event) {
+    if (name.newer) {
+      this.state.steps.push(this.state.tempStep);
+      this.state.tempState = "";
+    } else {
+      this.setState({ tempState: event.target.value });
+    }
+    this.setState({ steps: this.state.steps });
+  },
+
+  _renderSteps () {
+    let tips = this.state.steps.map( (tip,i) => {
+      return <input type="text" name="title" key={tip} value={tip} onChange={this.addingTips.bind(this, {newer: false, idx: i })}></input>
+    });
+    tips.push(<input type="text" name="title" key='new' value={this.state.tempStep} onChange={this.addingTips.bind(this, { newer: false, idx: -1 })}></input>);
+    return tips;
+  },
+
+  _stepTwo() {
+    return (<div>
+      {this._renderSteps()}
+      <row>
+        <Button onClick={() => this.addingTips({newer: true }) }>Add</Button>
+      </row>
+      {this._controls(this.state.steps.length > 0)}
+    </div>);
   },
   
   _controls(valid) {
