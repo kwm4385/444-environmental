@@ -2,6 +2,7 @@
     background-color: white;
     border-bottom: 5px #BBBBBB solid;
     margin-bottom: 10px;
+    overflow: scroll;
 }
 
 .section-inner {
