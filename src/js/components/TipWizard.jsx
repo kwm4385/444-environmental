@@ -65,29 +65,18 @@ export default React.createClass({
     );
   },
 
-  addingTips(name, event) {
-    if (name.newer) {
-      this.state.steps.push(this.state.tempStep);
-      this.state.tempState = "";
-    } else {
-      this.setState({ tempState: event.target.value });
-    }
-    this.setState({ steps: this.state.steps });
-  },
-
-  _renderSteps () {
-    let tips = this.state.steps.map( (tip,i) => {
-      return <input type="text" name="title" key={tip} value={tip} onChange={this.addingTips.bind(this, {newer: false, idx: i })}></input>
+   _renderSteps () {
+    return this.state.steps.map( (tip,i) => {
+      return <div key={i}> {i+1}. {tip}</div> 
     });
-    tips.push(<input type="text" name="title" key='new' value={this.state.tempStep} onChange={this.addingTips.bind(this, { newer: false, idx: -1 })}></input>);
-    return tips;
   },
 
   _stepTwo() {
     return (<div>
       {this._renderSteps()}
+      <input type="text" name="title" key='new' value={this.state.tempStep} onChange={(e) => this.setState({tempStep: e.target.value}) }></input>
       <row>
-        <Button onClick={() => this.addingTips({newer: true }) }>Add</Button>
+        <Button onClick={() => this.setState({steps: this.state.steps.concat([this.state.tempStep]), tempStep: ""}) }>Add</Button>
       </row>
       {this._controls(this.state.steps.length > 0)}
     </div>);
