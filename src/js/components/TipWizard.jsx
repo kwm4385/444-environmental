@@ -2,6 +2,7 @@ import React  from 'react'
 import { Row, Column, Button, Colors, Sizes } from 'react-foundation'
 import { Link } from 'react-router'
 import ReactWidgets  from 'react-widgets'
+import TipsApctionCreators from '../actions/TipsActionCreators'
 
 export default React.createClass({
   getInitialState() {
@@ -9,6 +10,7 @@ export default React.createClass({
       step: 0,
       complete: false,
       title: "",
+      points: 100,
       steps: []
     }
   },
@@ -38,7 +40,7 @@ export default React.createClass({
   },
 
   _submit() {
-    console.log(this.state);
+    TipsApctionCreators.createTip(this.state);
     this.setState({
       complete: true
     });
@@ -58,6 +60,8 @@ export default React.createClass({
           <Column small={12} style={{marginTop:'10px'}}>
             <label>Tip Name:</label>
             <input type="text" name="title" value={this.state.title} onChange={this._fieldChange.bind(this, 'title')}></input>
+            <label>Point Value:</label>
+            <input type="text" name="points" value={this.state.points} onChange={this._fieldChange.bind(this, 'points')}></input>
           </Column>
         </Row>
         {this._controls(this.state.title.length > 0)}

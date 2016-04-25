@@ -10,4 +10,10 @@ export default {
       tid, sid, done
     });
   },
-};
+  createTip({ title, steps, points}) {
+    Dispatcher.handleViewAction({
+      type: Constants.ActionTypes.TIP_CREATE,
+      title, steps, points 
+    });
+  }
+}

@@ -82,7 +82,19 @@ const TipsStore = assign({}, BaseStore, {
         let stepIndex = tipID.steps.indexOf(step);
         tips[tipIndex].steps[stepIndex].done = action.done;
         break;
-      // no default
+      case Constants.ActionTypes.TIP_CREATE:
+        console.log("new tip");
+        let tip = action;
+        tip.id = makeid();
+        tip.steps = tip.steps.map( step => {
+          return {
+            id: makeid(),
+            done: false,
+            objective: step
+          }
+        });
+        tips.push(tip);
+        break;
       }
     })
 });
