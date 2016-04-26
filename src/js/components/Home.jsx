@@ -86,14 +86,14 @@ export default React.createClass({
             <Column small={6} className="block-col">
               <Link to="/create">
                 <Button className="block-button">
-                  <p className="button-symbol">+</p>
+                  <img className="button-icon" src="/images/AddTipEvent.png"/>
                   Add Tip/Event
                 </Button>
               </Link>
             </Column>
             <Column small={6} className="block-col">
               <Button className="block-button">
-                <p className="button-symbol">&#x2611;</p>
+                <img className="button-icon" src="/images/VerifyTipEvent.png"/>
                 Verify Tip/Event
               </Button>
             </Column>

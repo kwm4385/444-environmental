@@ -3,3 +3,4 @@
 /node_modules/
 access.log
 /.idea/
+npm-debug.log

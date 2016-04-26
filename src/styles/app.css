@@ -150,3 +150,12 @@ h1 {
 .event-details {
   text-align: center;
 }
+
+.button-icon {
+  width: auto;
+  height: calc(100% - 2em);
+  margin-bottom: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
