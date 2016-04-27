@@ -8,7 +8,9 @@ export default {
   ActionTypes: keyMirror({
     EVENT_ADDED: 'event_added',
     TIPS_CHECKED: 'tip_changed',
-    TIP_CREATE: 'tip_create'
+    TIP_CREATE: 'tip_create',
+    TIP_APPROVE: 'tipa',
+    EVENT_APPROVE: 'eventa'
   }),
 
   ActionSources: keyMirror({

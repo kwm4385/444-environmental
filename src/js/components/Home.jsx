@@ -59,7 +59,7 @@ export default React.createClass({
               </p>
             </Column>
             <Column small={4} className="button-col">
-              <Link to="/mod">
+              <Link to="/mod/events">
                 <Button className="mod-button">Mod Tools</Button>
               </Link>
             </Column>

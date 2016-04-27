@@ -15,5 +15,11 @@ export default {
       type: Constants.ActionTypes.TIP_CREATE,
       title, steps, points 
     });
+  },
+  approveTip(tipId) {
+    Dispatcher.handleViewAction({
+      type: Constants.ActionTypes.TIP_APPROVE,
+      tip: tipId
+    });
   }
 }

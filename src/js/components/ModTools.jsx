@@ -1,10 +1,12 @@
 import React  from 'react'
-import { Row, Column } from 'react-foundation'
+import { Row, Column, Button } from 'react-foundation'
 import { Link } from 'react-router'
 import EventStore  from '../stores/EventStore.js'
 import TipsStore  from '../stores/TipsStore.js'
 import List  from './List.jsx'
 import Section  from './Section.jsx'
+import EventActionCreators from '../actions/EventActionCreators';
+import TipsActionCreators from '../actions/TipsActionCreators';
 
 export default React.createClass({
   _onChange() {
@@ -23,31 +25,42 @@ export default React.createClass({
 
   componentDidMount() {
     EventStore.addChangeListener(this._onChange);
+    TipsStore.addChangeListener(this._onChange);
   },
 
   componentWillUnmount() {
     EventStore.removeChangeListener(this._onChange);
+    TipsStore.removeChangeListener(this._onChange);
   },
 
   _renderListItem(e) {
     return (
       <Row>
-        <Column small={9}>
-          {e.title}
+        <Column small={8}>
+          <Link to={this.props.params.type+'/'+e.id}>
+            {e.title}
+          </Link>
         </Column>
-        <Column small={3}>
-          {e.points} Pts
+        <Column small={4}>
+          <Button onClick={() =>{
+            if (this.props.params.type === "events") {
+              EventActionCreators.approveEvent(e.id);                 
+            } else if (this.props.params.type === "tips") {
+              TipsActionCreators.approveTip(e.id);
+            }
+            this._onChange()
+          }}>Approve</Button>
         </Column>
       </Row>
     );
   },
 
   eventsFor(list) {
-    return <List items={this.state.events.events} itemRenderer={this._renderListItem} linkPrefix='/events'></List>;
+    return <List items={this.state.events.events} itemRenderer={this._renderListItem} ></List>;
   },
 
   tipsFor(list) {
-    return <List items={this.state.tips.tips} itemRenderer={this._renderListItem} linkPrefix='/tips'></List>;
+    return <List items={this.state.tips.tips} itemRenderer={this._renderListItem} ></List>;
   },
 
   render() {

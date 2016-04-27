@@ -10,4 +10,11 @@ export default {
       event: event
     });
   },
+
+  approveEvent(eventId) {
+    Dispatcher.handleViewAction({
+      type: Constants.ActionTypes.EVENT_APPROVE,
+      event: eventId
+    });
+  }
 };

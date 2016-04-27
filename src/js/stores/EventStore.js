@@ -15,6 +15,7 @@ function makeid() {
 // hardcode some starting data
 let events = [{
   title: "Electronics Recycling Drive",
+  pending: false,
   description: "Bring your dead phones, computers, batteries and more to be recycled!",
   location: "SAU",
   date: moment().add(1, 'days'),
@@ -23,6 +24,7 @@ let events = [{
 },
 {
   title: "Eco Networking",
+  pending: false,
   description: "Rub shoulders with some seriously green people.",
   location: "Webb Auditorium",
   date: moment().add(3, 'days'),
@@ -31,6 +33,7 @@ let events = [{
 },
 {
   title: "Earth Day Tree Planting",
+  pending: true,
   description: "Come plant free trees for Earth Day!",
   location: "Outside",
   date: moment().add(7, 'days'),
@@ -42,7 +45,7 @@ let events = [{
 const EventStore = assign({}, BaseStore, {
   // public methods used by Controller-View to operate on data
   getAll() {
-    return {events: events};
+    return { events: _.filter(events, (t) => !t.pending) };
   },
 
   getEvent(id) {
@@ -52,7 +55,7 @@ const EventStore = assign({}, BaseStore, {
   },
   
   getPending() {
-    return { events };
+    return { events: _.filter(events, (t) => t.pending) };
   },
 
   // register store with dispatcher, allowing actions to flow through
@@ -64,10 +67,14 @@ const EventStore = assign({}, BaseStore, {
       case Constants.ActionTypes.EVENT_ADDED:
         const event = action.event;
         event.id = makeid();
+        event.pending = true;
         events.push(event);
         break;
-
-      // no default
+      case Constants.ActionTypes.EVENT_APPROVE:
+        {
+          let tipa = _.find(events, t => t.id == action.event);
+          tipa.pending = false;
+        } break;
       }
     })
 });

@@ -8,7 +8,6 @@ export default React.createClass({
 
   renderItems(items, itemRenderer, linkPrefix) {
     return _.map(items, function(e, i) {
-      console.log(linkPrefix);
       if (linkPrefix) {
         return <Link key={i} to={linkPrefix + '/' + e.id}><li>{itemRenderer(e)}</li></Link>;
       } else {

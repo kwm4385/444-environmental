@@ -15,6 +15,7 @@ function makeid() {
 // hardcode some starting data
 let tips = [{
   title: "Recycling",
+  pending: false,
   description: "Bring your dead phones, computers, batteries and more to be recycled!",
   date: moment().add(1, 'days'),
   points: 100,
@@ -28,6 +29,7 @@ let tips = [{
 },
 {
   title: "Eco Networking",
+  pending: false,
   description: "Rub shoulders with some seriously green people.",
   date: moment().add(3, 'days'),
   points: 75,
@@ -42,6 +44,7 @@ let tips = [{
 },
 {
   title: "Earth Day Tree Planting",
+  pending: true,
   description: "Come plant free trees for Earth Day!",
   date: moment().add(7, 'days'),
   points: 150,
@@ -59,7 +62,7 @@ let tips = [{
 const TipsStore = assign({}, BaseStore, {
   // public methods used by Controller-View to operate on data
   getAll() {
-    return { tips };
+    return { tips: _.filter(tips, (t) => !t.pending) };
   },
 
   getTip(id) {
@@ -69,7 +72,7 @@ const TipsStore = assign({}, BaseStore, {
   },
 
   getPending() {
-    return { tips };
+    return { tips: _.filter(tips, (t) => t.pending) };
   },
 
   // register store with dispatcher, allowing actions to flow through
@@ -90,6 +93,7 @@ const TipsStore = assign({}, BaseStore, {
         console.log("new tip");
         let tip = action;
         tip.id = makeid();
+        tip.pending = true;
         tip.steps = tip.steps.map( step => {
           return {
             id: makeid(),
@@ -99,6 +103,11 @@ const TipsStore = assign({}, BaseStore, {
         });
         tips.push(tip);
         break;
+      case Constants.ActionTypes.TIP_APPROVE:
+        {
+          let tipa = _.find(tips, t => t.id == action.tip );
+          tipa.pending = false;
+        } break;
       }
     })
 });
