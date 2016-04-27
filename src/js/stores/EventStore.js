@@ -25,7 +25,7 @@ let events = [{
 {
   title: "Eco Networking",
   pending: false,
-  description: "Rub shoulders with some seriously green people.",
+  description: "Rub elbows with some seriously green people.",
   location: "Webb Auditorium",
   date: moment().add(3, 'days'),
   points: 75,
@@ -53,7 +53,7 @@ const EventStore = assign({}, BaseStore, {
       return e.id == id;
     });
   },
-  
+
   getPending() {
     return { events: _.filter(events, (t) => t.pending) };
   },

@@ -30,7 +30,7 @@ let tips = [{
 {
   title: "Eco Networking",
   pending: false,
-  description: "Rub shoulders with some seriously green people.",
+  description: "Rub elbows with some seriously green people.",
   date: moment().add(3, 'days'),
   points: 75,
   id: makeid(),
