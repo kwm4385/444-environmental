@@ -8,6 +8,7 @@ import Leaderboard  from './components/Leaderboard.jsx'
 import Navigation  from './components/Navigation.jsx'
 import Tip  from './components/Tip.jsx'
 import Tips  from './components/Tips.jsx'
+import ModTools  from './components/ModTools.jsx'
 
 const routes = (
   <Route component={ Navigation }>
@@ -17,7 +18,8 @@ const routes = (
      <Route name='leaderboards' path='leaderboards' component={ Leaderboard } />
      <Route name='events' path='events' component={ Events }/>
      <Route name='event' path='events/:eventId' component={ Event } />
-     <Route name='create' path='/create' component={ Create }/>
+     <Route name='mod' path='/mod' component={ ModTools }/>
+     <Route name='mod' path='/mod/:type' component={ ModTools }/>
   </Route>
 );
 

@@ -59,7 +59,9 @@ export default React.createClass({
               </p>
             </Column>
             <Column small={4} className="button-col">
-              <Button className="mod-button">Mod Tools</Button>
+              <Link to="/mod">
+                <Button className="mod-button">Mod Tools</Button>
+              </Link>
             </Column>
           </Row>
         </Section>

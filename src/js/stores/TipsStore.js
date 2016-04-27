@@ -23,7 +23,7 @@ let tips = [{
     { objective: "Recycling Thing A", done: true, id: makeid() },
     { objective: "Recycling", done: false, id: makeid() },
     { objective: "Recycling", done: false, id: makeid() },
-    { objective: "Recycling", done: false, id: makeid() },
+    { Tipstive: "Recycling", done: false, id: makeid() },
   ]
 },
 {
@@ -66,6 +66,10 @@ const TipsStore = assign({}, BaseStore, {
     return _.find(tips, function(e) {
       return e.id == id;
     });
+  },
+
+  getPending() {
+    return { tips };
   },
 
   // register store with dispatcher, allowing actions to flow through

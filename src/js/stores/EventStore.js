@@ -50,6 +50,10 @@ const EventStore = assign({}, BaseStore, {
       return e.id == id;
     });
   },
+  
+  getPending() {
+    return { events };
+  },
 
   // register store with dispatcher, allowing actions to flow through
   dispatcherIndex: Dispatcher.register(function handleAction(payload) {
