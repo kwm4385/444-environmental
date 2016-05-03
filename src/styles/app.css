@@ -61,6 +61,12 @@ h1 {
   color: #616161;
 }
 
+h2 {
+  font-size: 16px;
+  font-weight: 500;
+  color: #616161;
+}
+
 .app-body {
   border-bottom: 5px #DDDDDD solid;
 }

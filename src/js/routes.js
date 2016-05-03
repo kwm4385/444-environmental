@@ -2,13 +2,14 @@ import React  from 'react'
 import { Route, IndexRoute } from 'react-router'
 import Create  from './components/Create.jsx'
 import Event  from './components/Event.jsx'
+import EventCheckin  from './components/EventCheckin.jsx'
 import Events  from './components/Events.jsx'
 import Home  from './components/Home.jsx'
 import Leaderboard  from './components/Leaderboard.jsx'
+import ModTools  from './components/ModTools.jsx'
 import Navigation  from './components/Navigation.jsx'
 import Tip  from './components/Tip.jsx'
 import Tips  from './components/Tips.jsx'
-import ModTools  from './components/ModTools.jsx'
 
 const routes = (
   <Route component={ Navigation }>
@@ -20,6 +21,7 @@ const routes = (
      <Route name='event' path='events/:eventId' component={ Event } />
      <Route name='mod' path='/mod' component={ ModTools }/>
      <Route name='mod' path='/mod/:type' component={ ModTools }/>
+     <Route name='event' path='checkin/:eventId' component={ EventCheckin } />
   </Route>
 );
 

@@ -29,14 +29,14 @@ export default React.createClass({
             <img src="/images/Tips32x32.png" />
             <label>Tips</label>
           </Link>
-          <Link to='/leaderboards' className={active['leaderboard']}>
-            <img src="/images/Leaderboard32x32.png" />
-            <label>Leaderboard</label>
-          </Link>
           <Link to='/events' className={active['events']}>
             <img src="/images/Events32x32.png" />
             <label>Events</label>
           </Link>
+          <Link to='/leaderboards' className={active['leaderboard']}>
+            <img src="/images/Leaderboard32x32.png" />
+            <label>Leaderboard</label>
+          </Link>    
         </div>
 
         <div className="page-container">

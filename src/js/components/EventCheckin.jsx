@@ -9,7 +9,6 @@ import EventStore  from '../stores/EventStore.js'
 import Section  from './Section.jsx'
 
 export default React.createClass({
-
   _onChange() {
     this.setState(EventStore.getEvent(this.props.params.eventId));
   },
@@ -38,17 +37,14 @@ export default React.createClass({
           </Column>
         </Row>
         <Section className="roomy padded">
-          <p className="event-details">{e.description}</p>
-          <p className="event-details">{e.location}</p>
-          <p className="event-details">{e.date.calendar()}</p>
+          <Row className="event-details">
+            <Column small={12} style={{textAlign:'center'}}>
+              <h2>Scan the event QR code</h2>
+            </Column>
+          </Row>
             <Row className="event-details">
-              <Column small={6}>
-                <Button size={Sizes.SMALL} color={Colors.SECONDARY}>RSVP</Button>
-              </Column>
-              <Column small={6}>
-                <Link to={"/checkin/" + this.props.params.eventId}>
-                  <Button size={Sizes.SMALL}>I'm Here</Button>
-                </Link>
+              <Column small={12} style={{textAlign:'center'}}>
+                SCANNER
               </Column>
             </Row>
         </Section>
