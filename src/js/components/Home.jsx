@@ -2,17 +2,21 @@ import React  from 'react'
 import { Row, Column, Button, Colors, Sizes } from 'react-foundation'
 import { Link } from 'react-router'
 import EventStore  from '../stores/EventStore.js'
+import TipsStore  from '../stores/TipsStore.js'
 import Navigation  from './Navigation.jsx'
 import Section  from './Section.jsx'
 import md5 from 'md5'
 
 export default React.createClass({
   _onChange() {
-    this.setState(EventStore.getAll());
+    this.setState({events: EventStore.getAll()});
   },
 
   getInitialState() {
-    return EventStore.getAll();
+    return {
+      events: EventStore.getAll(),
+      tip: TipsStore.frontPageTip()
+    }
   },
 
   componentDidMount() {
@@ -24,7 +28,7 @@ export default React.createClass({
   },
 
   renderEvents() {
-    let events = _.first(_.sortBy(this.state.events, 'date'), 2);
+    let events = _.first(_.sortBy(this.state.events.events, 'date'), 2);
     return _.map(events, function(e, i) {
       return (
         <Row key={i} className="highlight roomy">
@@ -69,7 +73,7 @@ export default React.createClass({
 
         <Section>
           <h1>Tip of the Day</h1>
-          <p>Carousel goes here</p>
+          <p>{this.state.tip.title}</p>
         </Section>
 
         <Section>
