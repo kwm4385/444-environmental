@@ -2,16 +2,21 @@ import React  from 'react'
 import { Row, Column, Button, Colors, Sizes } from 'react-foundation'
 import { Link } from 'react-router'
 import EventStore  from '../stores/EventStore.js'
+import TipsStore  from '../stores/TipsStore.js'
 import Navigation  from './Navigation.jsx'
 import Section  from './Section.jsx'
+import md5 from 'md5'
 
 export default React.createClass({
   _onChange() {
-    this.setState(EventStore.getAll());
+    this.setState({events: EventStore.getAll()});
   },
 
   getInitialState() {
-    return EventStore.getAll();
+    return {
+      events: EventStore.getAll(),
+      tip: TipsStore.frontPageTip()
+    }
   },
 
   componentDidMount() {
@@ -23,7 +28,7 @@ export default React.createClass({
   },
 
   renderEvents() {
-    let events = _.first(_.sortBy(this.state.events, 'date'), 2);
+    let events = _.first(_.sortBy(this.state.events.events, 'date'), 2);
     return _.map(events, function(e, i) {
       return (
         <Row key={i} className="highlight roomy">
@@ -49,7 +54,7 @@ export default React.createClass({
         <Section noPadding>
           <Row>
             <Column small={3} className="pic-col">
-              <img className="profile-pic" src="/images/profile.jpg" />
+              <img className="profile-pic" src={"http://www.gravatar.com/avatar/" + md5("timbrook480@gmail.com") + "?s=600"} />
             </Column>
             <Column small={5}>
               <h1>John Doe</h1>
@@ -68,7 +73,7 @@ export default React.createClass({
 
         <Section>
           <h1>Tip of the Day</h1>
-          <p>Carousel goes here</p>
+          <p>{this.state.tip.title}</p>
         </Section>
 
         <Section>
@@ -85,7 +90,7 @@ export default React.createClass({
 
         <Section>
           <Row>
-            <Column small={6} className="block-col">
+            <Column small={12} className="block-col">
               <Link to="/create">
                 <Button className="block-button">
                   <img className="button-icon" src="/images/AddTipEvent.png"/>
@@ -93,13 +98,7 @@ export default React.createClass({
                 </Button>
               </Link>
             </Column>
-            <Column small={6} className="block-col">
-              <Button className="block-button">
-                <img className="button-icon" src="/images/VerifyTipEvent.png"/>
-                Verify Tip/Event
-              </Button>
-            </Column>
-          </Row>
+         </Row>
         </Section>
       </div>
     );

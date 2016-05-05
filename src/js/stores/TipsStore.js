@@ -75,6 +75,10 @@ const TipsStore = assign({}, BaseStore, {
     return { tips: _.filter(tips, (t) => t.pending) };
   },
 
+  frontPageTip() {
+    return tips[Math.floor(Math.random()*tips.length)];
+  },
+
   // register store with dispatcher, allowing actions to flow through
   dispatcherIndex: Dispatcher.register(function handleAction(payload) {
     const action = payload.action;
