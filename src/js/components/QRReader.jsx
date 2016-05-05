@@ -14,7 +14,7 @@ export default React.createClass({
                     height = currentElem.height(),
                     width = currentElem.width();
                 null == height && (height = 250), null == width && (width = 300);
-                var localMediaStream, vidElem = $('<video width="' + width + 'px" height="' + height + 'px"></video>').appendTo(currentElem),
+                var localMediaStream, vidElem = $('<video autoplay=autoplay width="' + width + 'px" height="' + height + 'px"></video>').appendTo(currentElem),
                     canvasElem = $('<canvas id="qr-canvas" width="' + (width - 2) + 'px" height="' + (height - 2) + 'px" style="display:none;"></canvas>').appendTo(currentElem),
                     video = vidElem[0],
                     canvas = canvasElem[0],
