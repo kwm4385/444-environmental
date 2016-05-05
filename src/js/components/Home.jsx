@@ -86,7 +86,7 @@ export default React.createClass({
 
         <Section>
           <Row>
-            <Column small={6} className="block-col">
+            <Column small={12} className="block-col">
               <Link to="/create">
                 <Button className="block-button">
                   <img className="button-icon" src="/images/AddTipEvent.png"/>
@@ -94,13 +94,7 @@ export default React.createClass({
                 </Button>
               </Link>
             </Column>
-            <Column small={6} className="block-col">
-              <Button className="block-button">
-                <img className="button-icon" src="/images/VerifyTipEvent.png"/>
-                Verify Tip/Event
-              </Button>
-            </Column>
-          </Row>
+         </Row>
         </Section>
       </div>
     );

@@ -102,8 +102,9 @@ h2 {
 }
 
 .block-button {
-  height: 150px;
-  width: 50vw;
+  height: 100px;
+  width: 100%;
+  font-size: 1.2em;
   margin: 0;
 }
 
