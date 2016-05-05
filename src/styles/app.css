@@ -165,3 +165,21 @@ h2 {
   margin-right: auto;
   display: block;
 }
+
+.callout {
+  margin: 0 0 1rem;
+  padding: 1rem;
+  border: 1px solid hsla(0,0%,4%,.25);
+  border-radius: 0;
+  position: relative;
+  color: #0a0a0a;
+  background-color: #fff;
+}
+
+.callout.alert {
+  background-color: #fce6e2;
+}
+.callout.primary {
+  background-color: #def0fc;
+}
+

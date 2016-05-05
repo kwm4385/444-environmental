@@ -24,6 +24,7 @@ const routes = (
      <Route name='mod' path='/mod/:type' component={ ModTools }/>
      <Route name='mod' path='/mod/:type/:id' component={ ModApproval }/>
      <Route name='event' path='checkin/:eventId' component={ EventCheckin } />
+     <Route name='create' path='/create' component={ Create }/>
   </Route>
 );
 
