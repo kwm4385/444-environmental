@@ -36,31 +36,17 @@ export default React.createClass({
   _renderListItem(e) {
     return (
       <Row>
-        <Column small={8}>
-          <Link to={this.props.params.type+'/'+e.id}>
-            {e.title}
-          </Link>
-        </Column>
-        <Column small={4}>
-          <Button onClick={() =>{
-            if (this.props.params.type === "events") {
-              EventActionCreators.approveEvent(e.id);                 
-            } else if (this.props.params.type === "tips") {
-              TipsActionCreators.approveTip(e.id);
-            }
-            this._onChange()
-          }}>Approve</Button>
-        </Column>
+        {e.title}
       </Row>
     );
   },
 
   eventsFor(list) {
-    return <List items={this.state.events.events} itemRenderer={this._renderListItem} ></List>;
+    return <List items={this.state.events.events} itemRenderer={this._renderListItem} linkPrefix="/mod/events"></List>;
   },
 
   tipsFor(list) {
-    return <List items={this.state.tips.tips} itemRenderer={this._renderListItem} ></List>;
+    return <List items={this.state.tips.tips} itemRenderer={this._renderListItem} linkPrefix="/mod/tips"></List>;
   },
 
   render() {

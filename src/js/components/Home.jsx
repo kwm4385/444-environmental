@@ -4,6 +4,7 @@ import { Link } from 'react-router'
 import EventStore  from '../stores/EventStore.js'
 import Navigation  from './Navigation.jsx'
 import Section  from './Section.jsx'
+import md5 from 'md5'
 
 export default React.createClass({
   _onChange() {
@@ -49,7 +50,7 @@ export default React.createClass({
         <Section noPadding>
           <Row>
             <Column small={3} className="pic-col">
-              <img className="profile-pic" src="/images/profile.jpg" />
+              <img className="profile-pic" src={"http://www.gravatar.com/avatar/" + md5("timbrook480@gmail.com") + "?s=600"} />
             </Column>
             <Column small={5}>
               <h1>John Doe</h1>
