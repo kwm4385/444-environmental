@@ -3,9 +3,9 @@ html {
 }
 
 body {
-    background-color: #DDDDDD;
-    margin: 0;
-    color: #656565;
+  background-color: #DDDDDD;
+  margin: 0;
+  color: #656565;
 }
 
 /* Foundation Overrides */
@@ -16,15 +16,15 @@ body {
 }
 
 .icon-bar > * {
-    padding: 0.25em;
+  padding: 0.25em;
 }
 
 .icon-bar > .item:hover {
-    background: #85C13E;
+  background: #85C13E;
 }
 
 .icon-bar > .item.active {
-    background: #6F9F34;
+  background: #6F9F34;
 }
 
 .button,
@@ -170,7 +170,7 @@ h2 {
 .callout {
   margin: 0 0 1rem;
   padding: 1rem;
-  border: 1px solid hsla(0,0%,4%,.25);
+  border: 1px solid rgba(10, 10, 10, 0.25);
   border-radius: 0;
   position: relative;
   color: #0a0a0a;
@@ -180,7 +180,41 @@ h2 {
 .callout.alert {
   background-color: #fce6e2;
 }
+
 .callout.primary {
   background-color: #def0fc;
 }
+.pic-col {
+  background-color: #EEEEEE;
+  padding: 5px;
+}
 
+.profile-pic {
+  border-radius: 50%;
+  border: 2px solid #7A7A7A;
+}
+
+.info {
+  font-size: 10px;
+}
+
+.mod-button {
+  margin: 0;
+}
+
+.vert-text {
+  position: relative;
+  top: 8px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.section {
+  background-color: white;
+  border-bottom: 5px #BBBBBB solid;
+  margin-bottom: 10px;
+  overflow: scroll;
+}
+
+.section-inner {
+  padding: 5px 0px;
+}
